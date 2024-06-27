@@ -1,27 +1,27 @@
 def caesar_cipher_encrypt(text, shift):
     encrypted_text = ""
     for char in text:
-        # Encrypt uppercase letters
+        #  uppercase Encryption 
         if char.isupper():
             encrypted_text += chr((ord(char) - ord('A') + shift) % 26 + ord('A'))
-        # Encrypt lowercase letters
+        #  lowercase Encryption 
         elif char.islower():
             encrypted_text += chr((ord(char) - ord('a') + shift) % 26 + ord('a'))
         else:
-            encrypted_text += char  # Leave any non-letter characters unchanged
+            encrypted_text += char  
     return encrypted_text
 
 def caesar_cipher_decrypt(encrypted_text, shift):
     decrypted_text = ""
     for char in encrypted_text:
-        # Decrypt uppercase letters
+        
         if char.isupper():
             decrypted_text += chr((ord(char) - ord('A') - shift) % 26 + ord('A'))
-        # Decrypt lowercase letters
+      
         elif char.islower():
             decrypted_text += chr((ord(char) - ord('a') - shift) % 26 + ord('a'))
         else:
-            decrypted_text += char  # Leave any non-letter characters unchanged
+            decrypted_text += char  
     return decrypted_text
 
 def main():
